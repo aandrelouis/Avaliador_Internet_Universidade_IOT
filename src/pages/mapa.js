@@ -56,20 +56,20 @@ export default function Mapa() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-white">
-      <div className="w-full h-3/4 px-12 pt-12">
+      <div className="w-full h-3/4 rounded-lg shadow-md">
         <Map 
           center={center} 
           markers={markers} 
-          className="w-full h-full rounded-lg shadow-md" 
+          className="w-full h-full " 
           localId={localId}
           setLocalId={setLocalId}
         />
       </div>
       
       
-      <div className="flex-1 w-full max-w-md space-y-4 my-10 shadow-2xl p-3 shadow-slate-400	items-center">
-        <h1 className="flex-1 self-center">Avaliação da Conexão</h1>
+      <div className="flex-1 w-full max-w-md  my-10 shadow-2xl p-3 shadow-slate-400	items-center">
           <div className="flex mb-2 content-around ">
+            <h1>Avaliação</h1>
             {[1, 2, 3, 4, 5].map((value) => (
               <div key={value} className="mr-2">
                 <input
@@ -92,7 +92,7 @@ export default function Mapa() {
           <input 
             type="text" 
             placeholder="Descrição" 
-            className="block w-full p-2 border border-gray-300 rounded-md" 
+            className="block w-full m-1 p-2 border border-gray-300 rounded-md" 
             onChange={(text) => setDescricao(text.target.value)}
           />
         </div>
@@ -100,14 +100,14 @@ export default function Mapa() {
           <input 
             type="text" 
             placeholder="Horário" 
-            className="block w-full p-2 border border-gray-300 rounded-md"
+            className="block w-full m-1 p-2 border border-gray-300 rounded-md"
             onChange={(text) => setHorario(text.target.value)}
             />
         </div>
         <div>
           <button 
             onClick={() => handleSubmit()}
-            className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue flex-grow w-full">
+            className="bg-blue-500 m-1 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue flex-grow w-full">
               Enviar
           </button>
         </div>
