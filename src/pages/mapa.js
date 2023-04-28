@@ -67,7 +67,7 @@ export default function Mapa() {
       </div>
       
       
-      <div className="flex-1 w-full max-w-md  my-10 shadow-2xl p-3 shadow-slate-400	items-center">
+      <div className="flex-1 w-full max-w-md my-10 shadow-2xl p-3 shadow-slate-400	items-center">
           <div className="flex mb-2 content-around ">
             <h1>Avaliação</h1>
             {[1, 2, 3, 4, 5].map((value) => (
