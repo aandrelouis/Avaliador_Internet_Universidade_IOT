@@ -1,6 +1,12 @@
 import handleSubmitForms from "@/config/supabase";
+import { Rating } from "@mui/material";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
+
+//animcao de toast
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const Map = dynamic(() => import("../../components/Map"), {
   ssr: false
@@ -26,8 +32,34 @@ export default function Mapa() {
       descricao,
       horario
     }
-    
-  handleSubmitForms(dados);
+  const result = await handleSubmitForms(dados);
+
+  if(result == "Dados inseridos com sucesso"){
+    toast.success(result, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      theme: "dark",
+      });
+  }
+  else{
+    toast.error(result, {
+      position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      draggable: true,
+      });
+  }
+  cleanInputs();
+}
+
+  function cleanInputs(){
+    setAvaliacao("");
+    setDescricao("");
+    setHorario("");
   }
 
   const markers = [
@@ -55,7 +87,7 @@ export default function Mapa() {
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-white">
+    <div className="flex flex-col items-center justify-center h-screen bg-[#1c1c1c]">
       <div className="w-full h-3/4 rounded-lg shadow-md">
         <Map 
           center={center} 
@@ -67,52 +99,58 @@ export default function Mapa() {
       </div>
       
       
-      <div className="flex-1 w-full max-w-md my-10 shadow-2xl p-3 shadow-slate-400	items-center">
+      <div className="flex-1 w-full max-w-md my-10 p-3 items-center bg-[#2b825b] rounded-lg">
           <div className="flex mb-2 content-around ">
-            <h1>Avaliação</h1>
-            {[1, 2, 3, 4, 5].map((value) => (
-              <div key={value} className="mr-2">
-                <input
-                  type="checkbox"
-                  name={`avaliacao${value}`}
-                  value={value}
-                  onChange={handleChange}
-                  checked={avaliacao == value}
-                  style={{
-                    minWidth: '17px',
-                    minHeight: '17px',
-                    margin: '0 10px'
-                }}
-                />
-                <label>{value}</label>
-              </div>
-            ))}
+            <h1>Avaliação :</h1>
+            <Rating
+              name="simple-controlled"
+              value={avaliacao}
+              onChange={(event, newValue) => {
+                setAvaliacao(newValue);
+              }}
+              size="large"
+            />
           </div>
         <div>
           <input 
             type="text" 
+            value={descricao}
             placeholder="Descrição" 
-            className="block w-full m-1 p-2 border border-gray-300 rounded-md" 
+            className="block w-full m-1 p-2 outline-0 rounded-md" 
             onChange={(text) => setDescricao(text.target.value)}
           />
         </div>
         <div>
           <input 
             type="text" 
+            value={horario}
             placeholder="Horário" 
-            className="block w-full m-1 p-2 border border-gray-300 rounded-md"
+            className="block w-full m-1 p-2 outline-0 rounded-md"
             onChange={(text) => setHorario(text.target.value)}
             />
         </div>
         <div>
           <button 
             onClick={() => handleSubmit()}
-            className="bg-blue-500 m-1 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:shadow-outline-blue flex-grow w-full">
+            className="bg-[#1c1c1c] m-1 text-white py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue flex-grow w-full">
               Enviar
           </button>
         </div>
       </div>
-      
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme="dark"
+      />
+
+
     </div>
   );
 }

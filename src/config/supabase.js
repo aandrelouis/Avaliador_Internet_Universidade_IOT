@@ -1,5 +1,7 @@
 import { createClient } from '@supabase/supabase-js';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const supabase = createClient(
   process.env.NEXT_PUBLIC_SUPABASE_URL,
@@ -18,10 +20,10 @@ async function handleSubmitForms({avaliacao, localId, descricao, horario}){
 
   if (error) {
     alert(error.message)
-    return
+    return "Erro ao inserir dados"
   }
   else{
-    alert("Dados inseridos com sucesso!")
+    return "Dados inseridos com sucesso"
   }
 }
 
