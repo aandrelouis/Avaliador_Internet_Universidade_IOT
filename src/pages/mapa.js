@@ -99,7 +99,7 @@ export default function Mapa() {
       </div>
       
       
-      <div className="flex-1 w-full max-w-md my-10 p-3 items-center bg-[#2b825b] rounded-lg">
+      <div className="flex-1 w-full max-w-md my-10 p-3 mx-0.5 items-center bg-[#2b825b] rounded-lg">
           <div className="flex mb-2 content-around ">
             <h1>Avaliação :</h1>
             <Rating
@@ -116,7 +116,7 @@ export default function Mapa() {
             type="text" 
             value={descricao}
             placeholder="Descrição" 
-            className="block w-full m-1 p-2 outline-0 rounded-md" 
+            className="block w-full m-1 mb-1.5 p-2 outline-0 rounded-md" 
             onChange={(text) => setDescricao(text.target.value)}
           />
         </div>
@@ -125,7 +125,7 @@ export default function Mapa() {
             type="text" 
             value={horario}
             placeholder="Horário" 
-            className="block w-full m-1 p-2 outline-0 rounded-md"
+            className="block w-full m-1  p-2 outline-0 rounded-md"
             onChange={(text) => setHorario(text.target.value)}
             />
         </div>
