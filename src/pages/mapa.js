@@ -100,8 +100,8 @@ export default function Mapa() {
       
       
       <div className="flex-1 w-full max-w-md my-10 p-3 mx-0.5 items-center bg-[#2b825b] rounded-lg">
-          <div className="flex mb-2 content-around ">
-            <h1>Avaliação :</h1>
+          <div className="flex w-full justify-center p-2">
+            <h1 className="text-white text-2xl">Avaliação:</h1>
             <Rating
               name="simple-controlled"
               value={avaliacao}
