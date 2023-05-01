@@ -116,7 +116,7 @@ export default function Mapa() {
             type="text" 
             value={descricao}
             placeholder="Descrição" 
-            className="block w-full m-1 mb-1.5 p-2 outline-0 rounded-md" 
+            className="block text-black w-full m-1 mb-1.5 p-2 outline-0 rounded-md" 
             onChange={(text) => setDescricao(text.target.value)}
           />
         </div>
@@ -125,7 +125,7 @@ export default function Mapa() {
             type="text" 
             value={horario}
             placeholder="Horário" 
-            className="block w-full m-1  p-2 outline-0 rounded-md"
+            className="block text-black w-full m-1  p-2 outline-0 rounded-md"
             onChange={(text) => setHorario(text.target.value)}
             />
         </div>
