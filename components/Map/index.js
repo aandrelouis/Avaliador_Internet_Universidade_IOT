@@ -16,6 +16,7 @@ export default function Map({ center, markers, localId ,setLocalId}){
             center={center} 
             zoom={30} 
             style={{ width: '100%', height: '100%' }}
+            
             >
             <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

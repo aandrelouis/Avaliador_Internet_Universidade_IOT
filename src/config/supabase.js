@@ -10,13 +10,19 @@ const supabase = createClient(
 
 
 async function handleSubmitForms({avaliacao, localId, descricao, horario}){
+  
+  if(avaliacao == null || localId == null){
+    return "Preencha todos os campos"
+  }
+
   const { error } = await supabase
   .from('testes')
   .insert({
     avaliacao,
     localId,
     descricao,
-    horario })
+    horario 
+  })
 
   if (error) {
     alert(error.message)

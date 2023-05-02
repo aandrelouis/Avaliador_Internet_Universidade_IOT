@@ -19,7 +19,7 @@ export default function Mapa() {
   const [localId, setLocalId] = useState(null);
   
 
-  const center = { lat: -20.273712, lng: -40.304307 };
+  const center = { lat: -20.273017,lng: -40.305748 };
 
   function handleChange(event) {
     setAvaliacao(event.target.value);
