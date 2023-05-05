@@ -19,16 +19,15 @@ export default function Home() {
           />
         </div>
         <h1 className="text-2xl font-bold mb-4 my-3">AvaliaUFES</h1>
-        <p className="mb-4">
-          Introdução: Aqui você pode escrever uma breve descrição sobre seu
-          site.
+        <p className="mb-4 text-justify">
+        O avaliaUfes é uma aplicação desenvolvida  para a UFES com o objetivo de avaliar a qualidade da conexão de internet disponível nas dependências da instituição. A ferramenta foi criada para garantir que estudantes, professores e funcionários possam relatar a qualidade da conexão.
         </p>
         <div className="mb-8">
           <h2 className="font-semibold">Instruções:</h2>
           <ul className="list-disc list-inside">
-            <li>Passo 1: Faça isso e aquilo</li>
-            <li>Passo 2: Faça aquilo</li>
-            <li>Passo 3: Siga estas etapas</li>
+            <li>Passo 1: Faça isso e aquilo e aquilo</li>
+            <li>Passo 2: Faça aquilo e depois marque isso</li>
+            <li>Passo 3: Siga estas etapas e avalie o sistema</li>
           </ul>
         </div>
             <div className="bg-[#1c1c1c] py-2 px-4 rounded">

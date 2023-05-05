@@ -99,7 +99,7 @@ export default function Mapa() {
       </div>
       
       
-      <div className="flex-1 w-full max-w-md my-10 p-3 mx-2 items-center bg-[#2b825b] rounded-lg">
+      <div className="flex-1 w-full max-w-md my-10 p-3 m-3 items-center bg-[#2b825b] rounded-lg">
           <div className="flex w-full justify-between p-3">
             <h1 className="text text-2xl">Qual a nota ?</h1>
             <Rating
