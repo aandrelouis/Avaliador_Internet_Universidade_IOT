@@ -1,3 +1,6 @@
+const Map = dynamic(() => import("../../components/Map"), {
+  ssr: false
+});
 import handleSubmitForms from "@/config/supabase";
 import { Rating } from "@mui/material";
 import dynamic from "next/dynamic";
@@ -8,9 +11,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 
-const Map = dynamic(() => import("../../components/Map"), {
-  ssr: false
-});
 
 export default function Mapa() {
   const [avaliacao, setAvaliacao] = useState(null);
@@ -99,7 +99,7 @@ export default function Mapa() {
       </div>
       
       
-      <div className="flex-1 w-full max-w-md my-10 p-3 mx-0.5 items-center bg-[#2b825b] rounded-lg">
+      <div className="flex-1 w-full max-w-md my-10 p-3 mx-2 items-center bg-[#2b825b] rounded-lg">
           <div className="flex w-full justify-between p-3">
             <h1 className="text text-2xl">Qual a nota ?</h1>
             <Rating
