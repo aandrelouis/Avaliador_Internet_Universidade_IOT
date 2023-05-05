@@ -13,13 +13,39 @@ import 'react-toastify/dist/ReactToastify.css';
 
 
 export default function Mapa() {
-  const [avaliacao, setAvaliacao] = useState(null);
-  const [descricao, setDescricao] = useState(null);
+  const [avaliacao, setAvaliacao] = useState(0);
+  const [descricao, setDescricao] = useState("");
   const [horario, setHorario] = useState("");
-  const [localId, setLocalId] = useState(null);
-  
-
+  const [localId, setLocalId] = useState(0);
   const center = { lat: -20.273017,lng: -40.305748 };
+
+  useEffect(() => {
+    function loadHour(){
+      const date = new Date();
+      const hour = date.getHours();
+      const minute = date.getMinutes();
+
+      if(hour < 10){
+        if(minute < 10){
+          setHorario(`0${hour}:0${minute}h`);
+        }
+        else{
+          setHorario(`0${hour}:${minute}h`);
+        }
+      }
+      else{
+        if(minute < 10){
+          setHorario(`${hour}:0${minute}h`);
+        }
+        else{
+          setHorario(`${hour}:${minute}h`);
+        }
+      }
+    }
+    loadHour();
+  }, []);
+
+
 
   function handleChange(event) {
     setAvaliacao(event.target.value);
@@ -43,7 +69,9 @@ export default function Mapa() {
       draggable: true,
       theme: "dark",
       });
-  }
+
+    cleanInputs();
+    }
   else{
     toast.error(result, {
       position: "top-right",
@@ -53,13 +81,13 @@ export default function Mapa() {
       draggable: true,
       });
   }
-  cleanInputs();
 }
 
   function cleanInputs(){
-    setAvaliacao("");
+    setAvaliacao(0);
     setDescricao("");
     setHorario("");
+    setLocalId(0);
   }
 
   const markers = [
@@ -92,16 +120,16 @@ export default function Mapa() {
         <Map 
           center={center} 
           markers={markers} 
-          className="w-full h-full " 
+          className="w-full h-full" 
           localId={localId}
           setLocalId={setLocalId}
         />
       </div>
       
       
-      <div className="w-full max-w-md my-10 p-4 m-4 items-center bg-[#2b825b] rounded-lg md:h-auto">
+      <div className="w-full max-w-md my-10 p-4 mx-4 items-center bg-[#2b825b] rounded-lg md:h-auto">
           <div className="flex w-full justify-between p-3">
-            <h1 className="text text-2xl">Qual a nota ?</h1>
+            <h1 className="text text-2xl">Qual a nota?</h1>
             <Rating
               name="simple-controlled"
               value={avaliacao}

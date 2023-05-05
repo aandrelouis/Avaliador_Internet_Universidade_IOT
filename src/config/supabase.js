@@ -11,7 +11,7 @@ const supabase = createClient(
 
 async function handleSubmitForms({avaliacao, localId, descricao, horario}){
   
-  if(avaliacao == null || localId == null){
+  if(avaliacao == 0 || localId == 0){
     return "Preencha todos os campos"
   }
 
