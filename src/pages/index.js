@@ -32,7 +32,7 @@ export default function Home() {
         </div>
             <div className="bg-[#1c1c1c] py-2 px-4 rounded">
               <Link href="/mapa">
-                Ir para próxima tela
+                Avalie agora a conexão!
               </Link>
             </div>
       </div>
