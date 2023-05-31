@@ -16,10 +16,10 @@ async function handleSubmitForms({avaliacao, localId, descricao, horario}){
   }
 
   const { error } = await supabase
-  .from('testes')
+  .from('IOT_UFES')
   .insert({
     avaliacao,
-    localId,
+    localid:localId,
     descricao,
     horario 
   })
