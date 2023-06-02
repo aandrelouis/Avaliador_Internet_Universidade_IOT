@@ -7,8 +7,13 @@ import { useState } from 'react';
 
 export default function Map({ center, markers, localId ,setLocalId}){
   
-    function handleCheckbox(id){
-        setLocalId(id);
+    function handleMarkerClick(id){
+        if(localId == id){
+            setLocalId(0);
+        }
+        else{
+            setLocalId(id);
+        }
     }
     
     return (
@@ -28,6 +33,11 @@ export default function Map({ center, markers, localId ,setLocalId}){
                     <Marker
                         key={marker.id}
                         position={[marker.lat, marker.lng]}
+                        eventHandlers={{
+                            click: () => {
+                                handleMarkerClick(marker.id);
+                            }
+                        }}
                     >
                         <Popup>
                             <h3>{marker.name}</h3>
@@ -39,10 +49,9 @@ export default function Map({ center, markers, localId ,setLocalId}){
                                         margin: '0 10px'
                                     }}
                                     type="checkbox"
-                                    onChange={()=>{ 
-                                        handleCheckbox(marker.id);
-                                    }}
+                                    readOnly
                                     checked={localId === marker.id}
+                                    onClick={() => handleMarkerClick(marker.id)}
                                 />
                             </div>
                         </Popup>

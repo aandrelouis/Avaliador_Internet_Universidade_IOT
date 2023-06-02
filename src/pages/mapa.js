@@ -17,6 +17,7 @@ export default function Mapa() {
   const [descricao, setDescricao] = useState("");
   const [horario, setHorario] = useState("");
   const [localId, setLocalId] = useState(0);
+  const [nameTemp, setNameTemp] = useState("");
   const center = { lat: -20.273017,lng: -40.305748 };
 
   useEffect(() => {
@@ -45,6 +46,17 @@ export default function Mapa() {
     loadHour();
   }, []);
 
+
+  useEffect(() => {
+    function loadName(){
+      let local = markers.filter((marker) => marker.id == localId);
+      
+      if(local.length > 0){
+        setNameTemp(local[0].name);
+      }
+    }
+    loadName();
+  }, [localId]);
 
 
   function handleChange(event) {
@@ -388,6 +400,7 @@ export default function Mapa() {
   ];
 
 
+
   
   return (
     <div className="flex flex-col items-center justify-center h-screen bg-[#1c1c1c]">
@@ -402,43 +415,59 @@ export default function Mapa() {
       </div>
       
       
-      <div className="w-full max-w-md my-10 p-4 mx-4 items-center bg-[#2b825b] rounded-lg md:h-auto">
-          <div className="flex w-full justify-between p-3">
-            <h1 className="text text-2xl">Qual a nota?</h1>
-            <Rating
-              name="simple-controlled"
-              value={avaliacao}
-              onChange={(event, newValue) => {
-                setAvaliacao(newValue);
-              }}
-              size="large"
-            />
-          </div>
-        <div>
-          <input 
-            type="text" 
-            value={descricao}
-            placeholder="Descrição" 
-            className="block text-black w-full m-1 mb-1.5 p-2 outline-0 rounded-md" 
-            onChange={(text) => setDescricao(text.target.value)}
-          />
-        </div>
-        <div>
-          <input 
-            type="text" 
-            value={horario}
-            placeholder="Horário" 
-            className="block text-black w-full m-1  p-2 outline-0 rounded-md"
-            onChange={(text) => setHorario(text.target.value)}
-            />
-        </div>
-        <div>
-          <button 
-            onClick={() => handleSubmit()}
-            className="bg-[#1c1c1c] m-1 text-white py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue flex-grow w-full">
-              Enviar
-          </button>
-        </div>
+      <div className="w-full max-w-md my-4 p-4 mx-2 items-center bg-[#2b825b] rounded-lg md:h-auto">
+          
+          {
+            localId !== 0 ? (
+              <>
+                {localId !== 0 && (
+                  <h1 className="text text-white text-center">{nameTemp}</h1>
+                )}
+                <div className="flex w-full justify-between p-3">
+                  <h1 className="text text-2xl">Qual a nota?</h1>
+                  <Rating
+                    name="simple-controlled"
+                    value={avaliacao}
+                    onChange={(event, newValue) => {
+                      setAvaliacao(newValue);
+                    }}
+                    size="large"
+                  />
+              </div>
+            <div>
+              <input 
+                type="text" 
+                value={descricao}
+                placeholder="Descrição" 
+                className="block text-black w-full m-1 mb-1.5 p-2 outline-0 rounded-md" 
+                onChange={(text) => setDescricao(text.target.value)}
+              />
+            </div>
+            <div>
+              <input 
+                type="text" 
+                maxLength={4}
+                value={horario.toString().replace(/(\d{2})(\d{2})/, "$1:$2h")}
+                placeholder="Horário" 
+                className="block text-black w-full m-1  p-2 outline-0 rounded-md"
+                onChange={(text) => setHorario(text.target.value)}
+                />
+            </div>
+            <div>
+              <button 
+                onClick={() => handleSubmit()}
+                className="bg-[#1c1c1c] m-1 text-white py-2 px-4 rounded-md focus:outline-none focus:shadow-outline-blue flex-grow w-full">
+                  Enviar
+              </button>
+              </div>
+              </>
+              ) : (
+                <div className="flex flex-col items-center justify-center">
+                  <h1 className="text text-2xl">Selecione um local no Mapa</h1>
+                </div>
+            )
+          }
+
       </div>
       <ToastContainer
         position="top-right"
@@ -452,8 +481,6 @@ export default function Mapa() {
         pauseOnHover
         theme="dark"
       />
-
-
     </div>
   );
 }
