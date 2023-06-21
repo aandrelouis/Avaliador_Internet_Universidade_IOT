@@ -30,7 +30,7 @@ export default function Home() {
             <li>Passo 3: Envie sua resposta! Se quiser, adicione um comentário.</li>
           </ul>
           <p className="mb-4 text-justify">
-          <b>Atenção!</b> É possível realizar avaliações múltiplas, inclusive sobre a mesma localidade em diversos horários. Além disso, você tem a flexibilidade de realizar a sua análise no momento que preferir, bastando atualizar o local e a hora da avaliação.
+          <br><b>Atenção!</b> É possível realizar avaliações múltiplas, inclusive sobre a mesma localidade em diversos horários. Além disso, você tem a flexibilidade de realizar a sua análise no momento que preferir, bastando atualizar o local e a hora da avaliação.
         </p>
           <p className="mb-4 text-justify">
           Junte-se ao nosso grupo no <a href="https://chat.whatsapp.com/Ca9eUWwAIOFHhHu7VAxS1r">WhatsApp</a> para receber notificações e lembrar de fazer a avaliação durante esse período :D
