@@ -438,7 +438,7 @@ export default function Mapa() {
               <input 
                 type="text" 
                 value={descricao}
-                placeholder="Descrição (ex. número da sala, detalhes sobre a qualidade)" 
+                placeholder="Descrição (ex. número da sala, qualidade)" 
                 className="block text-black w-full m-1 mb-1.5 p-2 outline-0 rounded-md" 
                 onChange={(text) => setDescricao(text.target.value)}
               />
