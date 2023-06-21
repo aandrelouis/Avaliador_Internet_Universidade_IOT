@@ -28,9 +28,10 @@ export default function Home() {
             <li>Passo 1: Escolha sua localização dentro da Ufes.</li>
             <li>Passo 2: Classifique a qualidade do sinal do Eduroam.</li>
             <li>Passo 3: Envie sua resposta! Se quiser, adicione um comentário.</li>
+            <li>Atenção! É viável realizar avaliações múltiplas, inclusive do mesmo local.</li>
           </ul>
           <p className="mb-4 text-justify">
-          Junte-se ao nosso grupo no WhatsApp e Telegram para receber notificações e lembrar de fazer a avaliação durante esse período :D
+          Junte-se ao nosso grupo no <a href="https://chat.whatsapp.com/Ca9eUWwAIOFHhHu7VAxS1r">WhatsApp</a> para receber notificações e lembrar de fazer a avaliação durante esse período :D
         </p>
         </div>
             <div className="bg-[#1c1c1c] py-2 px-4 rounded">
