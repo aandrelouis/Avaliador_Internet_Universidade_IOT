@@ -128,70 +128,70 @@ export default function Mapa() {
       id: 4,
       lat: -20.272961,
       lng: -40.304597,
-      name: "CT 4",
+      name: "CT 4 - Administração do CT",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 5,
       lat: -20.272307,
       lng: -40.305426,
-      name: "CT 5",
+      name: "CT 5 - Instituto de Tecnologia da Ufes - ITUFES",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 6,
       lat: -20.272423,
       lng: -40.306301,
-      name: "CT 6",
+      name: "CT 6 - Programas de Pós-graduação do CT",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 7,
       lat: -20.273371,
       lng: -40.305914,
-      name: "CT 7",
+      name: "CT 7 - Informática",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 8,
       lat: -20.271811,
       lng: -40.305871,
-      name: "CT 8",
+      name: "CT 8 - Engenharia Ambiental",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 9,
       lat: -20.273608,
       lng: -40.305874,
-      name: "CT 9",
+      name: "CT 9 - Informática",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 10,
       lat: -20.273776,
       lng: -40.305735,
-      name: "CT 10",
+      name: "CT 10 - Engenharia de Produção",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 11,
       lat: -20.272951,
       lng: -40.30655,
-      name: "CT 11",
+      name: "CT 11 - Engenharia Elétrica",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 12,
       lat: -20.273927,
       lng: -40.305372,
-      name: "CT 12",
+      name: "CT 12 - Salas de Aula",
       description: "Universidade Federal do Espírito Santo",
     },
     {
       id: 13,
       lat: -20.273454,
       lng: -40.306228,
-      name: "CT 13",
+      name: "CT 13 - Informática",
       description: "Universidade Federal do Espírito Santo",
     },
     {
@@ -438,7 +438,7 @@ export default function Mapa() {
               <input 
                 type="text" 
                 value={descricao}
-                placeholder="Descrição" 
+                placeholder="Descrição (ex. número da sala, detalhes sobre a qualidade)" 
                 className="block text-black w-full m-1 mb-1.5 p-2 outline-0 rounded-md" 
                 onChange={(text) => setDescricao(text.target.value)}
               />
