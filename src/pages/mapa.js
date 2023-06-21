@@ -397,6 +397,55 @@ export default function Mapa() {
       name: "DADF",
       description: "Universidade Federal do Espírito Santo",
     },
+    {
+      id: 43,
+      lat: -20.281319,
+      lng: -40.303865,
+      name: "Cantina do CEFD",
+      description: "Universidade Federal do Espírito Santo",
+    },
+    {
+      id: 44,
+      lat: -20.280819,
+      lng: -40.303801,
+      name: "Prédio Administrativo CEFD",
+      description: "Universidade Federal do Espírito Santo",
+    },
+    {
+      id: 45,
+      lat: -20.281158,
+      lng: -40.303082,
+      name: "Alas 1 e 2",
+      description: "Universidade Federal do Espírito Santo",
+    },
+    {
+      id: 46,
+      lat: -20.280897,
+      lng: -40.30327,
+      name: "Anexo CEFD",
+      description: "Universidade Federal do Espírito Santo",
+    },
+    {
+      id: 47,
+      lat: -20.281224,
+      lng: -40.303532,
+      name: "Biblioteca Setorial / Vestiários",
+      description: "Universidade Federal do Espírito Santo",
+    },
+    {
+      id: 48,
+      lat: -20.281591,
+      lng: -40.303731,
+      name: "Alas 3 e 4",
+      description: "Universidade Federal do Espírito Santo",
+    },
+    {
+      id: 49,
+      lat: -20.281012,
+      lng: -40.304514,
+      name: "NUPEM",
+      description: "Universidade Federal do Espírito Santo",
+    },
   ];
 
 
